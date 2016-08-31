@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html ng-app="browserApp">
+<head>
+    <title>Web browser</title>
+	<meta charset="utf-8" />
+    <link href="../../Content/Style/mainStyle.css" rel="stylesheet" />
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="../../Scripts/angular.min.js"></script>
+    
+    <script src="../Controllers/controller.js"></script>
+    <script src="../Services/path.service.js"></script>
+</head>
+<body class="body">
+    <div ng-controller="browsingCtrl as brCtrl">
+        
+        <div class="col-lg-offset-1 col-lg-10">
+            <table class="table table-all">
+                <thead>
+                    <tr class="table-head">
+                        <td>Less 10Mb</td>
+                        <td>10Mb - 50Mb</td>
+                        <td>More 100Mb</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{brCtrl.lessTen}}</td>
+                        <td>{{brCtrl.middle}}</td>
+                        <td>{{brCtrl.moreHundred}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="clearfix"></div>
+        <br />
+
+        <div class="col-lg-offset-1 col-lg-10">
+            <p class="path-style"><b>Current Path:</b> {{brCtrl.currentPath}}</p>
+            <div class="clearfix"></div>
+            <hr />
+
+            <div>
+                <ul ng-repeat="item in brCtrl.items" class="ul_default">
+                    <li class="directory-style" 
+                        ng-class="item.Type == 'dir' ? 'underline' : ''"
+                        ng-click="brCtrl.changePath(item.CurrentPath)">
+                    <span class="glyphicon glyphicon-folder-open icon-folder" ng-show="item.Type == 'dir'">&nbsp;</span> 
+                    <span class="glyphicon glyphicon-file" ng-show="item.Type == 'file'">&nbsp;</span>
+                    {{item.Name}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

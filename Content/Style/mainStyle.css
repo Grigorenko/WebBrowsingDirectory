@@ -1,0 +1,35 @@
+﻿        .body{
+            background: #F7F7F7;
+        }
+        .underline{
+            cursor: pointer;
+        }
+        .ul_default{
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .table-all{
+            margin-top:15px;
+            border:1px solid #B3B3B3;
+        }
+        .table-all td {
+            font-size: 2em;
+            text-align:center;
+            border:1px solid #B3B3B3;
+        }
+        .table-head{
+            background: #B3B3B3;
+        }
+
+        .path-style{
+            font-size: 2em;
+        }
+
+        .directory-style{
+            color:dodgerblue;
+            font-size: 1.2em;
+        }
+        .icon-folder{
+            color: #FEE387;
+        }
